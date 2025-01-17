@@ -2,6 +2,10 @@
 
 VSCode Extension bq dryrun sql linter is a Visual Studio Code extension that checks SQL code against a BigQuery server using the dry run command. It shows errors returned from the server directly in the editor, helping developers catch issues in their SQL code early.
 
+Extension URL: https://marketplace.visualstudio.com/items?itemName=timle.bq-dryrun-sql-linter  
+
+Hub URL: https://marketplace.visualstudio.com/manage/publishers/timle/extensions/bq-dryrun-sql-linter/hub
+
 ## Features
 
 - Lint SQL files by performing a dry run against a BigQuery server.

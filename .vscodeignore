@@ -1,0 +1,19 @@
+# Exclude test files and source maps
+**/*.ts
+**/*.js.map
+
+# Exclude other unnecessary files
+.vscode/
+.git/
+.eslintrc.js
+.eslintignore
+.prettierignore
+.prettierrc
+.editorconfig
+karma.conf.js
+tsconfig.json
+tslint.json
+webpack.config.js
+src/
+
+node_modules/

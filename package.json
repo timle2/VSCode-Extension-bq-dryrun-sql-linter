@@ -2,7 +2,7 @@
   "name": "bq-dryrun-sql-linter",
   "displayName": "BQ Dry Run SQL Linter",
   "description": "An experimental VS Code extension checks SQL code against BQ dryrun in VS Code",
-  "version": "0.0.4",
+  "version": "0.0.9",
   "publisher": "timle",
   "icon": "images/icon.png",
   "repository": {
@@ -18,12 +18,7 @@
     "onLanguage:sql-jinja",
     "onCommand:sqlLinter.runLinting"
   ],
-  "main": "./extension.js",
-  "files": [
-    "extension.js",
-    "images/icon.png",
-    "LICENSE.txt"
-  ],
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -113,15 +108,30 @@
     ]
   },
   "scripts": {
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "test": "node ./out/test/runTest.js"
+    "compile": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "vscode:prepublish": "npm run package",
+    "package": "webpack --mode production --devtool hidden-source-map"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
     "@types/vscode": "^1.48.0",
+    "@vscode/vsce": "^3.2.1",
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "typescript": "^4.0.3",
-    "vscode-test": "^1.3.0"
+    "url": "^0.11.4",
+    "util": "^0.12.5",
+    "vscode-test": "^1.3.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "@google-cloud/bigquery": "^7.4.0",
