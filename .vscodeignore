@@ -16,5 +16,4 @@ tslint.json
 webpack.config.js
 src/
 
-# Include node_modules to package runtime dependencies
-# Removed exclusion of node_modules/
+node_modules/
