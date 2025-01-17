@@ -9,7 +9,7 @@ const webpack = require('webpack');
 const config = {
   target: 'node', // changed from 'webworker' to 'node' for Node.js environment
 
-  entry: './extension.js', // the entry point of this extension
+  entry: './src/extension.js', // the entry point of this extension
   output: {
     // the bundle is stored in the 'dist' folder
     path: path.resolve(__dirname, 'dist'),
@@ -27,26 +27,7 @@ const config = {
     extensions: ['.ts', '.js'],
     alias: {
       // provides alternate implementation for node module and source files
-    },
-    fallback: {
-      // Since we're targeting Node.js, we can remove unnecessary fallbacks
-      // Remove all fallbacks except for those explicitly needed
-      "fs": false,
-      "path": false,
-    },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-          },
-        ],
-      },
-    ],
+    }
   },
 };
 
